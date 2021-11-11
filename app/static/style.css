@@ -41,15 +41,30 @@ body {
 
 #predict {
     display: flex;
+    flex-direction: column;
 }
 
-#predict-text {
-    margin: auto;
-    height: 72px;
-    font-size: 24px;
-    text-align: center;
-    line-height: 72px;
-    color: var(--rating-color);
+#predict-text-comment {
+    color: #929292;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+#predict-text-star {
+    color: #929292;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+#predict-text-star img{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    margin-top: 2px;
 }
 
 #form {

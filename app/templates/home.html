@@ -25,15 +25,13 @@
             <h1 id="title" class="header__title">Classification of product comment data on Tiki website</h1>
             <h2 id="title" class="header__detail">Data mining project</h2>
         </header>
-        <div id="predict">
-            <!-- <p id="predict-text">{{ result }}</p> -->
-        </div>
         <form id="form" action="/prediction" method="get">
             <div class="form-group">
                 <label id="comment-label" for="comment">Enter your comment</label>
                 <div class='text-wrapper'>
                     <div class="form-text">
-                        <img src="https://res.cloudinary.com/dxnfxl89q/image/upload/v1636613580/samples/tiki_logo_qnfhmt.png" alt="" />
+                        <img src="https://res.cloudinary.com/dxnfxl89q/image/upload/v1636613580/samples/tiki_logo_qnfhmt.png"
+                            alt="" />
                         <textarea name="comment" id="comment" cols="10" rows="10"></textarea>
                     </div>
                 </div>
@@ -42,6 +40,15 @@
                 <input id='submit-btn' type="submit" value="Predict">
             </div>
         </form>
+        <div id="predict">
+            <p id="predict-text-comment">Your comment: "{{ result }}"</p>
+            <p id="predict-text-star">
+                Rating: 5
+                <img src="https://res.cloudinary.com/dxnfxl89q/image/upload/v1636615912/samples/star_yjvbtj.png"
+                    alt="" />
+            </p>
+
+        </div>
     </div>
 </body>
 

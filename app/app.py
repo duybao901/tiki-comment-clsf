@@ -8,7 +8,7 @@ app = Flask(__name__, template_folder='templates')
 def prediction():
     # Lấy dữ liệu người dụng nhập vào qua phương thức GET
     comment = request.args.get('comment')
-    return render_template('home.html', result = 'Bình luận của bạn đạt '+ comment +' sao')
+    return render_template('home.html', result =comment)
 
 
 # Trang chủ dẩn đến home
