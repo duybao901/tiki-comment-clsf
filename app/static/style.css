@@ -1,31 +1,42 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
-    --title-color: black;
-    --primative-color: rgb(26, 148, 255);
+    --title-color: #090909;
+    --primative-color: #1a94ff;
     --rating-color: rgb(255, 153, 0);
 }
 
 html {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-    background-color: #eeeeee;
+    background-color: #fafafa;
 }
 
 #container {
-    width: 100%;
+    width: 1000px;
     margin: 32px auto 0;
 }
 
-#title {
+.header__title {
     color: var(--title-color);
-    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.header__detail {
+    color: #929292;
+    font-weight: 500;
+    font-size: 17px;
+    margin-bottom: 50px;
+    margin-top: 5px;
 }
 
 #predict {
@@ -42,7 +53,6 @@ body {
 }
 
 #form {
-    padding: 24px;
     font-size: 24px;
 }
 
@@ -51,43 +61,85 @@ body {
     flex-direction: column;
     margin-bottom: 24px;
 }
+.form-group img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 5px;
+    margin: -30px;
+}
+.form-group .form-text {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 5px 20px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
 
 #comment-label {
     margin-bottom: 12px;
+    color: #5c5c5c;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 #comment {
-    font-size: 24px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #5c5c5c;
     min-height: 160px;
-    resize: vertical;
+    border: none;
     outline: none;
-    border-radius: 4px;
-    border: 2px solid #ccc;
-    padding: 8px;
+    resize: none;
+    margin-top: 5px;
 }
 
 #submit-btn {
-    font-size: 24px;
-    border-radius: 4px;
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: 500;
+    height: 40px;
     border: none;
     outline: none;
-    background-color: var(--primative-color);
-    color: white;
+    background-color: #e7e7e7;
+    color: #929292;
     padding: 6px 0;
-    cursor: pointer ;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
 }
 
 #submit-btn:hover {
     opacity: 0.9;
 }
 
-@media (min-width: 768px) {
+/*Ipad ngang(1024 x 768)*/
+@media screen and (max-width: 1024px) {
     #container {
-        width: 800px;
+        width: 600px;
     }
-    
-    #predict-text { 
-        font-size: 36px;
+}
+/*Ipad dọc(768 x 1024)*/
+@media screen and (max-width: 768px) {
+    #container {
+        width: 600px;
+    }
+}
+/*Tablet nhỏ(480 x 640)*/
+@media screen and (max-width: 480px) {
+    #container {
+        padding: 20px;
+    }
+}
+/*Iphone(480 x 640)*/
+@media screen and (max-width: 320px) {
+    #container {
+        padding: 20px;
+    }
+}
+/*Smart phone nhỏ*/
+@media screen and (max-width: 240px) {
+    #container {
+        padding: 20px;
     }
 }
