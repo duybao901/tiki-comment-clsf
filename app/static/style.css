@@ -55,9 +55,9 @@ body {
     margin-top: 5px;
 }
 #predict-text-star {
-    color: #929292;
+    color: var(--primative-color);
     font-weight: 400;
-    font-size: 16px;
+    font-size: 24px;
     margin-bottom: 10px;
     margin-top: 5px;
     display: flex;
@@ -120,8 +120,8 @@ body {
     height: 40px;
     border: none;
     outline: none;
-    background-color: #e7e7e7;
-    color: #929292;
+    background-color: var(--primative-color);
+    color: white;
     padding: 6px 0;
     cursor: pointer;
     font-family: "Poppins", sans-serif;
