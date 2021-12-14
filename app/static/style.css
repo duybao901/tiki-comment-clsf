@@ -111,6 +111,7 @@ body {
     outline: none;
     resize: none;
     margin-top: 5px;
+    font-family: inherit;
 }
 
 #submit-btn {

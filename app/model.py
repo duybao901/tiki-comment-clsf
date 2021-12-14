@@ -9,7 +9,7 @@ import re
 ### Từ viết tắt
 acronym_words = []
 acronym_words_dict = []
-acronym_words = open('data/acronym_word.txt','r', encoding='utf-8')
+acronym_words = open('acronym_word.txt','r', encoding='utf-8')
 acronym_words = acronym_words.readlines()
 for i in range(len(acronym_words)):
   acronym_words_split = acronym_words[i].split("\t")
@@ -23,7 +23,7 @@ for i in range(len(acronym_words)):
 
 # Từ dừng
 stop_words = []
-stop_words = open('./data/stop_word.txt','r', encoding='utf-8')
+stop_words = open('stop_word.txt','r', encoding='utf-8')
 stop_words = stop_words.readlines()
 for i in range(len(stop_words)):
   stop_words[i] = re.sub("[\t\n\ufeff]",'',stop_words[i])
@@ -126,7 +126,7 @@ def text_prosessing(text):
 def predict(text):
     # CountVectorizer dùng để lưu thông tin về vector đặc trưng
     # MultinomialNB là model cho kết quả cross validation tốt nhất 
-    with open('app\CountVectorizerAndMultinomialNB.pkl', 'rb') as file:
+    with open('CountVectorizerAndMultinomialNB.pkl', 'rb') as file:
       cv, NB_model = pickle.load(file)
 
     text = text_prosessing(text)  # tiền xử lý trước khi đưa vào mô hình để dự đoán
