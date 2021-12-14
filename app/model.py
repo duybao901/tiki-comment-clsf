@@ -6,7 +6,7 @@ import re
 
 # Trước khi tiến hành dự đoán ta cần làm sạch dữ liệu và vec-tơ hóa dữ liệu văn bản
 ## Làm sạch dữ liệu
-### từ viết tắt
+### Từ viết tắt
 acronym_words = []
 acronym_words_dict = []
 acronym_words = open('data/acronym_word.txt','r', encoding='utf-8')
@@ -21,7 +21,7 @@ for i in range(len(acronym_words)):
     pass
 
 
-# từ dừng
+# Từ dừng
 stop_words = []
 stop_words = open('./data/stop_word.txt','r', encoding='utf-8')
 stop_words = stop_words.readlines()
@@ -31,7 +31,7 @@ for i in range(len(stop_words)):
 
 # Tách từ
 def sementation(text):
-  return ViTokenizer.tokenize(text)
+  return ViTokenizer.tokenize(text)  # sử dụng thư viện vitokenizer để tách từ
 
 
 # Chuẩn hóa unicode sang chuẩn unicode dựng sẵn

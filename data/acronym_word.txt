@@ -12,7 +12,7 @@ tl	trả lời
 rep	trả lời
 r	rồi
 fb	facebook
-face	faceook
+face	facebook
 thanks	cảm ơn
 thank	cảm ơn
 tks	cảm ơn
@@ -163,3 +163,4 @@ mk mình
 cx cũng
 pa ba
 dx được
+đx được
