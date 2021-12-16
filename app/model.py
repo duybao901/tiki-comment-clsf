@@ -1,4 +1,3 @@
-import pandas as pd
 import pickle
 from pyvi import ViTokenizer
 import re
@@ -87,9 +86,6 @@ def remove_stop_word(text):
 def text_prosessing(text):
   # Chuyển đổi thành chữ thường
   text = text.lower() 
-
-  # tách từ
-  text = sementation(text)
   
   #Chuẩn hóa unicode sang chuẩn unicode dựng sẵn
   text = covert_unicode(text)
@@ -100,8 +96,8 @@ def text_prosessing(text):
   # Xử lý các từ viết trùng lắp
   text = remove_loop_char(text)
 
-  # Xử dụng bộ từ điển để thay thế các kiểu gõ dấu và viết tắt
-  text = remove_stop_word(text)
+  # # Xóa từ dừng
+  # text = remove_stop_word(text)
 
   # Xóa các kí tự trong dấu []
   text = re.sub('\[.*?\]', '', text)
@@ -120,20 +116,28 @@ def text_prosessing(text):
 
   #Xóa các kí tự xuống dòng
   text = " ".join(re.sub("\n", " ", text).split())
+
+  # tách từ
+  text = sementation(text)
+  
   return text
+
+
+# load không gian vector và model trờ lại từ file để dùng cho việc dự đoán
+with open('CountVectorizerAndSVC.pkl', 'rb') as file:
+  cv, model = pickle.load(file)
+
 
 # Ta cần tải model từ file đã được lưu từ lúc huấn luyện
 def predict(text):
-    # CountVectorizer dùng để lưu thông tin về vector đặc trưng
-    # MultinomialNB là model cho kết quả cross validation tốt nhất 
-    with open('CountVectorizerAndMultinomialNB.pkl', 'rb') as file:
-      cv, NB_model = pickle.load(file)
-
     text = text_prosessing(text)  # tiền xử lý trước khi đưa vào mô hình để dự đoán
     X = [text]  # bao xung quanh string bằng 1 list để đưa vào vectorizer
     X_vector = cv.transform(X)
-    y_pred = NB_model.predict(X_vector)
+    y_pred = model.predict(X_vector)
     return y_pred[0]
 
+# example
 # result = predict('Gói cẩn thận, hàng chính hãng, rất thích, cảm ơn shop')
+# print(result)
+# result = predict('Hàng bị trầy xước')
 # print(result)
