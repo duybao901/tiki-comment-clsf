@@ -23,7 +23,9 @@ def prediction():
 # Trang chủ dẩn đến home
 @app.route('/')
 def home():
-    return render_template('home.html') # Render home.html
+    comment=''
+    predict={}
+    return render_template('home.html',comment=comment, predict=predict) # Render home.html
 
 # Start server
 if __name__ == '__main__':
