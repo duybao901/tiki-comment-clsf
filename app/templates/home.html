@@ -22,11 +22,38 @@
 </head>
 
 <body>
-    <header id="header">
-        <div class="container">
-            <h1 id="title" class="header__title">Phân loại dữ liệu bình luận sản phẩm trên Website Tiki</h1>
+    <header class='header'>
+        <div class='header__container'>
+            <div class='logo'>
+                <img src="https://res.cloudinary.com/dxnfxl89q/image/upload/v1636613580/samples/tiki_logo_qnfhmt.png"
+                    alt="" />
+            </div>
+            <div class='header__title'>
+                <h1>Phân loại dữ liệu bình luận sản phẩm trên Website Tiki</h1>
+            </div>
+            <ul class='menu'>
+                <li>
+                    <a href="https://github.com/duycarry123/tiki-comment-clsf" target="_blank">Github</a>
+                </li>
+                <li class="sub-menu">
+                    Liên hệ
+                    <ul>
+                        <li>
+                            duyb1812257@student.ctu.edu.vn
+                        </li>
+                        <li>
+                            ducb1812262@student.ctu.edu.vn
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </header>
+    <div class="title">
+        <div class="container">
+            <h1>Phân loại dữ liệu bình luận sản phẩm trên Website Tiki</h1>
+        </div>
+    </div>
     <div class="body">
         <div class="container">
             <form id="form" action="/prediction" method="get">
@@ -59,8 +86,25 @@
         </div>
     </div>
     <footer>
-
+        Copyright © 2021.
+        Đức & Duy
     </footer>
 </body>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+
+        const headerTitle = document.querySelector(".header__title");
+
+        window.addEventListener('scroll', () => {
+            console.log(window.scrollY)
+            console.log(headerTitle)
+            if (window.scrollY > 85) {
+                headerTitle.classList.add('active')
+            }else{
+                headerTitle.classList.remove('active')
+            }
+        })
+    });
+</script>
 
 </html>
