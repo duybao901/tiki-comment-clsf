@@ -12,12 +12,12 @@ def prediction():
     result = model.predict(comment)
     try:
         if result == 1:
-            result = 'I guess you are satisfied with the product'
+            predict = {"msg":"hài lòng", "result": True }
         else:
-            result = 'I guess you are unsatisfied with the product'
+            predict = {"msg":"không hài lòng"}
     except:
         result = 'Đã xảy ra lỗi...'
-    return render_template('home.html', comment=comment, result=result)
+    return render_template('home.html', comment=comment, predict=predict)
 
 
 # Trang chủ dẩn đến home

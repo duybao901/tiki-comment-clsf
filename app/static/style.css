@@ -9,11 +9,11 @@
 :root {
     --title-color: #090909;
     --primative-color: #1a94ff;
-    --rating-color: rgb(255, 153, 0);
+    --rating-color: rgba(255, 153, 0, 0);
 }
 
 html {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 body {
@@ -23,15 +23,16 @@ body {
     overflow-x: hidden;
 }
 
-#container {
+.container {
     width: 1000px;
     margin: 32px auto 0;
 }
 
 .header__title {
-    color: var(--title-color);
-    font-weight: 600;
     font-size: 30px;
+    color: rgb(41, 41, 41);
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .header__detail {
@@ -40,6 +41,16 @@ body {
     font-size: 17px;
     margin-bottom: 50px;
     margin-top: 5px;
+    font-family: 'Fira Sans', sans-serif;
+    letter-spacing: .5px;
+    text-align: right;
+}
+
+.body {
+    background-image: url('../static/images/background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100vw;
 }
 
 #predict {
@@ -48,22 +59,24 @@ body {
 }
 
 #predict-text-comment {
-    color: #929292;
+    color: #292929;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 10px;
     margin-top: 5px;
 }
+
 #predict-text-star {
-    color: var(--primative-color);
-    font-weight: 400;
+    color: #292929;
+    font-weight: 500;
     font-size: 24px;
     margin-bottom: 10px;
     margin-top: 5px;
     display: flex;
     align-items: center;
 }
-#predict-text-star img{
+
+#predict-text-star img {
     width: 20px;
     height: 20px;
     object-fit: cover;
@@ -79,6 +92,7 @@ body {
     flex-direction: column;
     margin-bottom: 24px;
 }
+
 .form-group img {
     width: 100px;
     height: 100px;
@@ -86,14 +100,16 @@ body {
     border-radius: 5px;
     margin: -30px;
 }
+
 .form-group .form-text {
     width: 100%;
     padding: 20px;
     background-color: white;
-    border-radius: 5px;
-    box-shadow: 0px 5px 20px 2px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 5px 20px 2px rgba(0, 0, 0, 0.1); */
     display: flex;
     flex-direction: column;
+    font-family: 'Fira Sans', sans-serif;
+    border: 1px solid rgb(219, 219, 219);
 }
 
 #comment-label {
@@ -101,6 +117,8 @@ body {
     color: #5c5c5c;
     font-size: 20px;
     font-weight: 600;
+    font-family: 'Fira Sans', sans-serif;
+    letter-spacing: .5px;
 }
 
 #comment {
@@ -115,21 +133,33 @@ body {
 }
 
 #submit-btn {
-    font-size: 16px;
-    border-radius: 5px;
-    font-weight: 500;
-    height: 40px;
-    border: none;
-    outline: none;
-    background-color: var(--primative-color);
-    color: white;
-    padding: 6px 0;
     cursor: pointer;
-    font-family: "Poppins", sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(41, 41, 41);
+    height: 44px;
+    width: auto;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0px 27px;
+    border: 0px;
+    transition: all 0.3s ease 0s;
 }
 
 #submit-btn:hover {
     opacity: 0.9;
+}
+.predict-pos{
+    color: var(--primative-color);
+    margin: 0 5px;
+}
+.predict-nev{
+    color: crimson;
+    margin: 0 5px;
 }
 
 /*Ipad ngang(1024 x 768)*/
@@ -138,24 +168,28 @@ body {
         width: 600px;
     }
 }
+
 /*Ipad dọc(768 x 1024)*/
 @media screen and (max-width: 768px) {
     #container {
         width: 600px;
     }
 }
+
 /*Tablet nhỏ(480 x 640)*/
 @media screen and (max-width: 480px) {
     #container {
         padding: 20px;
     }
 }
+
 /*Iphone(480 x 640)*/
 @media screen and (max-width: 320px) {
     #container {
         padding: 20px;
     }
 }
+
 /*Smart phone nhỏ*/
 @media screen and (max-width: 240px) {
     #container {
