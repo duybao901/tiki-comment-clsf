@@ -22,6 +22,7 @@ oki	tốt
 okie	tốt
 sp	sản phẩm
 dc	được
+đc được
 vs	với
 đt	điện thoại
 thjk	thích
